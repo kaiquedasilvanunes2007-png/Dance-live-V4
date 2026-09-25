@@ -1,5 +1,5 @@
 const express=require('express');const http=require('http');const path=require('path');const crypto=require('crypto');const helmet=require('helmet');const multer=require('multer');const {WebSocketServer}=require('ws');
-const app=express(),server=http.createServer(app),wss=new WebSocketServer({server});const PORT=process.env.PORT||10000;const ADMIN_PASSWORD=process.env.ADMIN_PASSWORD||'troque-esta-senha';
+const app=express(),server=http.createServer(app),wss=new WebSocketServer({server});const PORT=process.env.PORT||10000;const ADMIN_PASSWORD=process.env.ADMIN_PASSWORD||'DEVKAIQUE11092007';
 app.use(helmet({contentSecurityPolicy:false,crossOriginEmbedderPolicy:false}));app.use(express.json({limit:'1mb'}));app.use(express.urlencoded({extended:true}));app.use(express.static(path.join(__dirname,'public')));
 const sessions=new Map(),attempts=new Map(),donors=new Map(),music=new Map();let musicId=0;
 let state={paused:false,quality:'medium',maxCharacters:40,primary:'#7c3cff',secondary:'#00e5ff',lights:'#ff2bd6',volume:.65,music:null};
